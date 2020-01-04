@@ -10,8 +10,15 @@ const orm = {
       cb(result);
     });
     },
-    create: function(table, cols, vals, cb){
-        var queryString = "insert into"+ table;
+    create: function(vals){
+        var queryString = `insert into burgers (burger_name) values (${vals});`;
+        connection.query(queryString, function(err){
+          if (err) {
+            throw err;
+          }
+          console.log("success")
+
+        })
 
 
     },
