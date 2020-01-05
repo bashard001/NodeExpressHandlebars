@@ -10,13 +10,13 @@ const orm = {
       cb(result);
     });
     },
-    create: function(vals){
-        var queryString = `insert into burgers (burger_name) values (${vals});`;
-        connection.query(queryString, function(err){
+    create: function(vals, cb){
+        var queryString = `insert into burgers (burger_name) values (?);`;
+        connection.query(queryString, vals, function(err, result){
           if (err) {
             throw err;
           }
-          console.log("success")
+          cb(result)
 
         })
 

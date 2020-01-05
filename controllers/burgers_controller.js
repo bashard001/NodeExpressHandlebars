@@ -10,6 +10,13 @@ router.get("/", function(req, res){
         };
         res.render("index", hbsObject)
     })
-})
+});
 
+router.post("/form", function(req, res){
+    
+    burger.create(req.body.name, function(result){
+        
+        res.json({ id: result.insertId });
+    })
+});
 module.exports = router;
