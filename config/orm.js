@@ -23,7 +23,9 @@ const orm = {
 
     },
 
-    update: function(){}
+    update: function(vals, cb){
+      var queryString = `update burgers set devoured = ${vals} where id = ?`
+    }
 };
 
 module.exports = orm;
