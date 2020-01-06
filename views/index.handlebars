@@ -10,15 +10,34 @@
 </form>
 
 
+<div id= "container">
 
-<ul>
+  <div><ul>
   {{#each burger}}
+  {{#if devoured}}
+  {{else}}
     <li>
       <p>name: {{burger_name}}</p>
       
     </li>
+    {{/if}}
+  {{/each}}
+</ul></div>
+  <div>
+<ul>
+  {{#each burger}}
+  {{#if devoured}}
+    <li>
+      <p>name: {{burger_name}}</p>
+      
+    </li>
+    {{/if}}
   {{/each}}
 </ul>
+  </div>
+  
+
+</div>
 {{!-- <h2>Cats that are sleepy!</h2>
 
 <ul>
