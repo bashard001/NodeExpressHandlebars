@@ -24,7 +24,11 @@ const orm = {
     },
 
     update: function(vals, cb){
-      var queryString = `update burgers set devoured = ${vals} where id = ?`
+      var queryString = `update burgers set devoured = true where id = ?;`
+      connection.query(queryString, vals, function(err, result){
+        if (err) throw err;
+        cb(result)
+      })
     }
 };
 

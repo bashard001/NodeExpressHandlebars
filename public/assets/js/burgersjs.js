@@ -18,5 +18,25 @@ $(function(){
         }
     )
 })
+
+$(".devoure").on("click", function(){
+    var caContent = {
+
+       id: $(this).attr("status"),
+    }
+    
+    $.ajax("api/burgers/"+ $(this).attr("status"), {
+        type: "PUT",
+        data: caContent
+    }).then(
+        function(){
+            console.log("udid")
+            location.reload();
+        }
+    )
+
+    
+    
+})
 })
 

@@ -21,4 +21,10 @@ router.post("/api/burgers", function(req, res){
         res.json({ id: result.insertId });
     })
 });
+
+router.put("/api/burgers/:id", function(req, res){
+    burger.update(req.body.id, function(result){
+        res.json({ id: result.insertId });
+    })
+})
 module.exports = router;

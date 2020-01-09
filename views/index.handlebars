@@ -17,8 +17,8 @@
   {{#if devoured}}
   {{else}}
     <li>
-      <p>name: {{burger_name}}</p>
-      
+      <p class= "burger" status={{id}} >name: {{burger_name}}</p>
+      <button class="devoure" status= {{id}}>Devoure it</button>
     </li>
     {{/if}}
   {{/each}}
